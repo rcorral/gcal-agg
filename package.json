@@ -1,0 +1,36 @@
+{
+  "name": "gcal-agg",
+  "version": "0.0.1",
+  "description": "Just a hacky google calendar aggregator",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "author": "Rafa Corral",
+  "copyright": "Rafa Corral",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@types/express": "4.0.37",
+    "@types/moment-timezone": "0.5.0",
+    "@types/node": "11.11.3",
+    "@types/request": "2.0.4",
+    "@types/request-promise-native": "1.0.7",
+    "body-parser": "1.18.2",
+    "dotenv": "4.0.0",
+    "express": "4.16.1",
+    "moment-timezone": "0.5.13",
+    "request": "https://registry.npmjs.org/request/-/request-2.81.0.tgz",
+    "request-promise-native": "1.0.5",
+    "tslint": "5.7.0",
+    "typescript": "3.3.3333"
+  },
+  "devDependencies": {
+    "source-map-support": "0.5.0",
+    "ts-node": "3.3.0"
+  }
+}
