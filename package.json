@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp -r src/views build/src/views",
     "start": "node build",
     "dev": "ts-node src/index"
   },
