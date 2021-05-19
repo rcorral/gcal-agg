@@ -1,3 +1,4 @@
+require('dotenv').config()
 import express = require('express')
 import path = require('path')
 
