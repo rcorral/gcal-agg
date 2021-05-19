@@ -14,15 +14,16 @@ const getAllEvents = (): Promise<Array<Event>> => {
     .toISOString(true)
     .replace('.000', '')
   const end = moment()
-    .date(moment().daysInMonth())
+    .date(moment().add(1, 'month').daysInMonth())
     .hour(0)
     .minute(0)
     .second(0)
     .millisecond(0)
+    .add(1, 'month')
     .toISOString(true)
     .replace('.000', '')
 
-  const promises = configuration.calendars.map((cal) => {
+  const promises: Array<Promise<Event>> = configuration.calendars.map((cal) => {
     const path = configuration.calendarTypes.gcal.path(cal.path, cal.calendarId, start, end)
     return getGCalEvents(path)
   })

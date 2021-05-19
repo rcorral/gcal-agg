@@ -8,5 +8,5 @@ export default {
       },
     },
   },
-  calendars: process.env.CALENDARS,
+  calendars: JSON.parse(process.env.CALENDARS),
 }

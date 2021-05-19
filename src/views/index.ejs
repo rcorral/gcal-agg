@@ -28,8 +28,10 @@
 
         const calendarEl = document.getElementById('calendar')
         const calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
+          selectable: false,
+          initialView: 'timeGridWeek',
           initialEvents,
+          height: window.innerHeight,
         })
         calendar.render()
       }
