@@ -1,14 +1,18 @@
-import bodyParser = require('body-parser')
 import express = require('express')
+import path = require('path')
+
+import { indexRoute } from './routes'
 
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
+app.use(express.json())
 
-/********************
- *      SERVER      *
- ********************/
+app.get('/', indexRoute)
 
-app.listen(process.env.PORT, () => {
-  console.log(`Express listening on port ${process.env.PORT}`)
+const server = app.listen(process.env.PORT, () => {
+  console.log(`import service listening on port ${process.env.PORT}`)
+
+  process.on('SIGTERM', () => server.close())
 })
